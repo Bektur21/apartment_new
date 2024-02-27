@@ -1,0 +1,971 @@
+openapi: 3.0.3
+info:
+  title: Your Project API
+  version: 1.0.0
+  description: Your project description
+paths:
+  /api/companies/:
+    get:
+      operationId: api_companies_list
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CompanyDetail'
+          description: ''
+    post:
+      operationId: api_companies_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CompanyDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CompanyDetail'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyDetail'
+          description: ''
+  /api/companies/{id}/:
+    get:
+      operationId: api_companies_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this company.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyDetail'
+          description: ''
+    put:
+      operationId: api_companies_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this company.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CompanyDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CompanyDetail'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyDetail'
+          description: ''
+    patch:
+      operationId: api_companies_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this company.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCompanyDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCompanyDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCompanyDetail'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyDetail'
+          description: ''
+    delete:
+      operationId: api_companies_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this company.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/districts/:
+    get:
+      operationId: api_districts_list
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DistrictDetail'
+          description: ''
+    post:
+      operationId: api_districts_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DistrictDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/DistrictDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/DistrictDetail'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DistrictDetail'
+          description: ''
+  /api/districts/{id}/:
+    get:
+      operationId: api_districts_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Район.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DistrictDetail'
+          description: ''
+    put:
+      operationId: api_districts_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Район.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DistrictDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/DistrictDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/DistrictDetail'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DistrictDetail'
+          description: ''
+    patch:
+      operationId: api_districts_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Район.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedDistrictDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedDistrictDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedDistrictDetail'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DistrictDetail'
+          description: ''
+    delete:
+      operationId: api_districts_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Район.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/markets/:
+    get:
+      operationId: api_markets_list
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MarketDetail'
+          description: ''
+    post:
+      operationId: api_markets_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MarketDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MarketDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MarketDetail'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MarketDetail'
+          description: ''
+  /api/markets/{id}/:
+    get:
+      operationId: api_markets_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Маркет.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MarketDetail'
+          description: ''
+    put:
+      operationId: api_markets_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Маркет.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MarketDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MarketDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MarketDetail'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MarketDetail'
+          description: ''
+    patch:
+      operationId: api_markets_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Маркет.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedMarketDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedMarketDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedMarketDetail'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MarketDetail'
+          description: ''
+    delete:
+      operationId: api_markets_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Маркет.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/prices/:
+    get:
+      operationId: api_prices_list
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PriceDetail'
+          description: ''
+    post:
+      operationId: api_prices_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PriceDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PriceDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PriceDetail'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceDetail'
+          description: ''
+  /api/prices/{id}/:
+    get:
+      operationId: api_prices_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Цена.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceDetail'
+          description: ''
+    put:
+      operationId: api_prices_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Цена.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PriceDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PriceDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PriceDetail'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceDetail'
+          description: ''
+    patch:
+      operationId: api_prices_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Цена.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedPriceDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedPriceDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedPriceDetail'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceDetail'
+          description: ''
+    delete:
+      operationId: api_prices_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Цена.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/rooms/:
+    get:
+      operationId: api_rooms_list
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RoomsDetail'
+          description: ''
+    post:
+      operationId: api_rooms_create
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoomsDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/RoomsDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RoomsDetail'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoomsDetail'
+          description: ''
+  /api/rooms/{id}/:
+    get:
+      operationId: api_rooms_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Комната.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoomsDetail'
+          description: ''
+    put:
+      operationId: api_rooms_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Комната.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoomsDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/RoomsDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/RoomsDetail'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoomsDetail'
+          description: ''
+    patch:
+      operationId: api_rooms_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Комната.
+        required: true
+      tags:
+      - api
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedRoomsDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedRoomsDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedRoomsDetail'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoomsDetail'
+          description: ''
+    delete:
+      operationId: api_rooms_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Комната.
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    CompanyDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          title: Компания
+          maxLength: 30
+        portfolio:
+          type: string
+          maxLength: 150
+        history:
+          type: string
+          title: История компании
+      required:
+      - history
+      - id
+      - name
+      - portfolio
+    DistrictDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type: string
+      required:
+      - description
+      - id
+      - name
+    MarketDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        descriptions:
+          type: string
+          title: Описание
+        distance:
+          type: integer
+      required:
+      - descriptions
+      - distance
+      - id
+      - name
+    PatchedCompanyDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          title: Компания
+          maxLength: 30
+        portfolio:
+          type: string
+          maxLength: 150
+        history:
+          type: string
+          title: История компании
+    PatchedDistrictDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type: string
+    PatchedMarketDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        descriptions:
+          type: string
+          title: Описание
+        distance:
+          type: integer
+    PatchedPriceDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        currency:
+          type: string
+          title: Валюта
+          maxLength: 20
+        company:
+          type: string
+          maxLength: 200
+    PatchedRoomsDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        repair:
+          type: string
+          title: Ремон
+        floors:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: -9223372036854775808
+          format: int64
+          title: Количество этажей
+        wallmaterial:
+          type: string
+          title: Материал стен
+          maxLength: 30
+        yearofconstraction:
+          type: string
+          format: date
+          title: Год постройки
+    PriceDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        currency:
+          type: string
+          title: Валюта
+          maxLength: 20
+        company:
+          type: string
+          maxLength: 200
+      required:
+      - company
+      - currency
+      - id
+    RoomsDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        repair:
+          type: string
+          title: Ремон
+        floors:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: -9223372036854775808
+          format: int64
+          title: Количество этажей
+        wallmaterial:
+          type: string
+          title: Материал стен
+          maxLength: 30
+        yearofconstraction:
+          type: string
+          format: date
+          title: Год постройки
+      required:
+      - floors
+      - id
+      - repair
+      - wallmaterial
+      - yearofconstraction
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

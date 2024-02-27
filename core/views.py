@@ -11,8 +11,9 @@ from .serializers import CompanyDetailSerializer, RoomsDetailSerializer, Distric
 class CompanyViewSet(viewsets.ModelViewSet):
     queryset = Company.objects.all()
     serializer_class = CompanyDetailSerializer
-    filter_backends = [DjangoFilterBackend]
+    filter_backends = [DjangoFilterBackend,filters.SearchFilter]
     filterset_fields = ['name']
+    search_fields = ['description']
 
 
 class RoomsViewSet(viewsets.ModelViewSet):
@@ -22,9 +23,10 @@ class RoomsViewSet(viewsets.ModelViewSet):
 class DistrictViewSet(viewsets.ModelViewSet):
     queryset = District.objects.all()
     serializer_class = DistrictDetailSerializer
-    filter_backends = [DjangoFilterBackend]
+    filter_backends = [DjangoFilterBackend,filters.SearchFilter]
     filterset_fields = ['name']
-
+    search_fields = ['description']
+    
 
 class MarketViewSet(viewsets.ModelViewSet):
     queryset = Market.objects.all()
@@ -33,7 +35,7 @@ class MarketViewSet(viewsets.ModelViewSet):
 class PriceViewSet(viewsets.ModelViewSet):
     queryset = Price.objects.all()
     serializer_class = PriceDetailSerializer
-    filter_backends = [DjangoFilterBackend]
+    filter_backends = [DjangoFilterBackend,filters.SearchFilter]
     filterset_fields = ['name']
-
+    search_fields = ['currency']
 
